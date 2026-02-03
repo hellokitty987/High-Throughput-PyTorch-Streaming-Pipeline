@@ -70,7 +70,7 @@ The following benchmarks demonstrate the impact of switching from Random Access 
 
 #### 1. The Bottleneck (Naive Loader)
 *Observation: The GPU sits idle (0-5% Utilization) waiting for the CPU to open and close thousands of individual files.*
-![Naive Loader Screenshot]([LINK_TO_YOUR_NAIVE_SCREENSHOT.jpg])
+![Naive Loader Screenshot](https://github.com/hellokitty987/High-Throughput-PyTorch-Streaming-Pipeline/blob/main/docs/Naive%20Loader%20Test.jpg) 
 
 #### 2. The Solution (Optimized Stream)
 *Observation: The GPU utilization spikes and holds steady (~40-60%), proving the data is flowing faster than the GPU can process it.*
