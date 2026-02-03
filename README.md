@@ -74,10 +74,10 @@ The following benchmarks demonstrate the impact of switching from Random Access 
 
 #### 2. The Solution (Optimized Stream)
 *Observation: The GPU utilization spikes and holds steady (~40-60%), proving the data is flowing faster than the GPU can process it.*
-![Optimized Loader Screenshot]([LINK_TO_YOUR_OPTIMIZED_SCREENSHOT.jpg])
+![Optimized Loader Screenshot](https://github.com/hellokitty987/High-Throughput-PyTorch-Streaming-Pipeline/blob/main/docs/Sharded%20Loader%20Test.jpg)
 
 #### 3. The Metrics (Final Report)
-![Performance Report Screenshot]([LINK_TO_YOUR_PERFORMANCE_REPORT.jpg])
+![Performance Report Screenshot](https://github.com/hellokitty987/High-Throughput-PyTorch-Streaming-Pipeline/blob/main/docs/Performance%20Report.jpg)
 
 ---
 
@@ -85,7 +85,7 @@ The following benchmarks demonstrate the impact of switching from Random Access 
 To prove the pipeline is mathematically correct and compatible with Deep Learning architectures, a full training loop was executed on a 3D-CNN.
 
 **Result:** 5 Epochs completed successfully with stable iteration times.
-![Training Log Screenshot]([LINK_TO_YOUR_TRAINING_LOG.jpg])
+![Training Log Screenshot]([docs/Training Report.jpg])
 
 ---
 
