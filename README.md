@@ -9,7 +9,7 @@ Training on high-dimensional data (like 3D Video Tensors) often suffers from the
 
 ### 🏗 Architecture & Data Stack
 
-**Objective:** Maximize RTX 4070 utilization by decoupling data loading from model training.
+**Objective:** Maximize RTX 4070 utilization by decoupling data loading from model training. 
 
 * **Frameworks:** PyTorch, WebDataset, NumPy
 * **Data Structure:** 5D Video Tensors `(Batch, Channel, Time, Height, Width)`
