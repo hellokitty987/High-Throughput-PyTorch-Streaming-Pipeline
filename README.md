@@ -20,11 +20,11 @@ During the benchmarking phase, I encountered a unique problem: **The Optimized L
 ### 🏗 Architecture & Data Stack
 
 **Objective:** Maximize RTX 4070 utilization by decoupling data loading from model training.
-Core ML: PyTorch
-Data Orchestration: WebDataset
-Data Transformation & Indexing: Pandas, NumPy, Parquet
 
 * **Frameworks:** PyTorch, WebDataset, NumPy, Pandas
+    * **Core ML:** PyTorch
+    * **Data Orchestration:** WebDataset
+    * **Data Transformation & Indexing:** Pandas, NumPy, Parquet
 * **Data Structure:** 5D Tensors `(Batch, Channel, Time, Height, Width)`
 * **Hardware:** NVIDIA RTX 4070 (Validation Environment)
 * **Storage Strategy (Mock Data Lake):**
