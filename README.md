@@ -25,7 +25,7 @@ During the benchmarking phase, I encountered a unique problem: **The Optimized L
     * **Core ML:** PyTorch
     * **Data Orchestration:** WebDataset
     * **Data Transformation & Indexing:** Pandas, NumPy, Parquet
-* **Data Structure:** 5D Tensors `(Batch, Channel, Time, Height, Width)`
+* **Data Structure:** 4D Tensors `(Time, Channe, Height, Width)` for A/B Testing (Phase 1-3), 5D Tensors `(Batch, Channel, Time, Height, Width)` for training (Phase 4)
 * **Hardware:** NVIDIA RTX 4070 (Validation Environment)
 * **Storage Strategy (Mock Data Lake):**
     > **Note on Infrastructure:** This project currently utilizes a local NVMe SSD to simulate a "Mock Data Lake" for rapid validation of the sharding logic. The pipeline is architected with `pathlib` and standard URI resolution, allowing for a seamless transition from local `file://` paths to **Azure Data Lake Storage (ADLS Gen2)** or **S3** in the production phase without refactoring the core streaming logic.
