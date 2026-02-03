@@ -67,14 +67,14 @@ The following benchmarks demonstrate the impact of switching from Random Access 
 
 **Outcome Statement:**
 ```diff
-- **Outcome Statement:**
 - By implementing a sharded WebDataset pipeline, I reduced I/O wait (latency) times by **98.7%**, increasing the throughput of the RTX 4070 from **1,269** samples/sec to **2001** samples/sec. This resulted in a **78.8x** net increase in data loading speed.
 ```
 
-Calculation:Original Latency (Naive Time): $3.94\text{s}$ \
-New Latency (Sharded Time): $0.05\text{s}$ \
-Formula: $\frac{\text{Old Time} - \text{New Time}}{\text{Old Time}} \times 100$ \
-Result: $\frac{3.94 - 0.05}{3.94} \times 100 = \mathbf{98.73\%}$ \
+Calculation:\
+**Original Latency (Naive Time):** $3.94\text{s}$ \
+**New Latency (Sharded Time):** $0.05\text{s}$ \
+**Formula:** $\frac{\text{Old Time} - \text{New Time}}{\text{Old Time}} \times 100$ \
+**Result:** $\frac{3.94 - 0.05}{3.94} \times 100 = \mathbf{98.73\%}$ 
 
 #### 1. The Bottleneck (Naive Loader)
 *Observation: The GPU sits idle (0-5% Utilization) waiting for the CPU to open and close thousands of individual files.*
