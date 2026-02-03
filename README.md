@@ -51,7 +51,7 @@ The pipeline is divided into four distinct engineering phases, moving from raw d
 
 #### Phase 3: Downstream (Performance Benchmarking)
 * **Script:** `run_benchmark.py`
-* **Function:** A/B tests the "Naive" random-access method against the "Optimized" streaming method.
+* **Function:** **A/B tests** the **"Naive"** random-access method against the **"Optimized"** streaming method.
 * **Methodology:** Includes the high-repetition stress test (500 loops) to capture sustained GPU utilization metrics.
 
 #### Phase 4: Integration (Model Training)
