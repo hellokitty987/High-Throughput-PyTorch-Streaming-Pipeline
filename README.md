@@ -82,7 +82,7 @@ During the benchmarking phase, I encountered a unique problem: **The Optimized L
 
 * **The Issue:** The sharded pipeline finished the task in **0.12 seconds**, but the `nvidia-smi` monitoring tool has a minimum polling interval of **0.10 seconds**. The GPU would finish the work and return to idle before the monitor could capture a single data point, resulting in jagged, unreliable utilization graphs.
 * **The Solution:** I engineered a **Stress Test Loop** in `run_benchmark.py` that iterates over the dataset **500 times**.
-* **The Result:** I increased the Execution Time (by looping 500 times) so that it would be significantly longer than the Sampling Interval of the monitoring tool. This forced the GPU to sustain the workload for ~15 seconds, allowing me to accurately capture the utilization spike (60%+) and prove the elimination of the I/O bottleneck.
+* **The Result:** I increased the Execution Time **(by looping 500 times)** so that it would be significantly longer than the Sampling Interval of the monitoring tool. This forced the GPU to sustain the workload for ~15 seconds, allowing me to accurately capture the utilization spike (60%+) and prove the elimination of the I/O bottleneck.
 
 ---
 
