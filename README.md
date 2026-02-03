@@ -19,7 +19,7 @@ During the benchmarking phase, I encountered a unique problem: **The Optimized L
 
 ### 🏗 Architecture & Data Stack
 
-**Objective:** Maximize RTX 4070 utilization by decoupling data loading from model training.
+**Objective:** Maximize RTX 4070 GPU utilization by decoupling data loading from model training.
 
 * **Frameworks:** PyTorch, WebDataset, NumPy, Pandas
     * **Core ML:** PyTorch
