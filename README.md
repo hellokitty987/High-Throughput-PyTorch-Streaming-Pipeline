@@ -87,7 +87,7 @@ To prove the pipeline is mathematically correct and compatible with Deep Learnin
 ---
 
 ### 🔮 Future Improvements
-* **Cloud Migration:** Switch `BASE_DIR` to an Azure Blob Storage container.
+* **Cloud Migration:** Switch `BASE_DIR` to Azure Data Lake Storage (ADLS).
 * **Augmentation:** Inject `torchvision` transforms into the `data_engine` pipeline.
 * **Scaling:** Deploy to a distributed multi-GPU cluster using `GenericDataLoader`.
 
