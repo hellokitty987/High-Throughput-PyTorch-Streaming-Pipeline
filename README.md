@@ -65,10 +65,11 @@ The pipeline is divided into four distinct engineering phases, moving from raw d
 
 The following benchmarks demonstrate the impact of switching from Random Access (OS File System) to Sequential Streaming (WebDataset).
 
-**Outcome Statement:**
+### 🚀 **Outcome Statement:**
 ```diff
-- By implementing a sharded WebDataset pipeline, I reduced I/O wait (latency) times by **98.7%**, increasing the throughput of the RTX 4070 from **1,269** samples/sec to **2001** samples/sec. This resulted in a **78.8x** net increase in data loading speed.
+By implementing a sharded WebDataset pipeline, I reduced I/O wait (latency) times by **98.7%**, increasing the throughput of the RTX 4070 from **1,269** samples/sec to **2001** samples/sec. This resulted in a **78.8x** net increase in data loading speed.
 ```
+#### By implementing a sharded WebDataset pipeline, I reduced I/O wait (latency) times by **98.7%**, increasing the throughput of the RTX 4070 from **1,269** samples/sec to **2001** samples/sec. This resulted in a **78.8x** net increase in data loading speed.
 
 Calculation:\
 **Original Latency (Naive Time):** $3.94\text{s}$ \
