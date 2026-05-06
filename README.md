@@ -3,7 +3,7 @@
 ### 🚀 Project Overview
 This project implements a production-grade **ETL (Extract, Transform, Load) pipeline** designed to eliminate GPU starvation during Deep Learning training.
 
-Training on massive unstructured datasets (Images, Audio, Video, LIDAR) often suffers from the "Small File Problem," where I/O latency bottlenecks the GPU. This project solves that by engineering a **sequential streaming pipeline** using `WebDataset`. It transforms thousands of random-access files into sequential shards, enabling linear-speed streaming directly from storage (Local/Cloud) to the GPU VRAM.
+Training on massive unstructured datasets (Images, Audio, Video, LIDAR) often suffers from the "Small File Problem," where I/O latency bottlenecks the GPU. This project solves that by engineering a **sequential streaming pipeline** using `WebDataset`. It transforms thousands of random-access files into sequential shards, enabling linear-speed streaming directly from cloud object storage to the GPU VRAM.
 
 ---
 
@@ -37,12 +37,12 @@ During the benchmarking phase, I encountered a unique problem: **The Optimized L
 The pipeline is divided into four distinct engineering phases, moving from raw data generation to end-to-end model validation.
 
 #### Phase 1: Upstream (Data Generation)
-* **Script:** `upstream/prep_data.py`
+* **Script:** `upstream/prep_data_adls.py`
 * **Function:** Generates synthetic unstructured tensors (Float16) and packages them into `.tar` shards.
 * **Output:** 10 sequential shards containing 1,000 samples + `metadata.parquet`.
 
 #### Phase 2: Midstream (The Engine)
-* **Script:** `data_engine.py`
+* **Script:** `data_engine_adls.py`
 * **Function:** A reusable, modular driver that handles the streaming logic.
 * **Key Features:**
     * Dynamic path resolution (Local/Cloud agnostic).
@@ -50,12 +50,12 @@ The pipeline is divided into four distinct engineering phases, moving from raw d
     * Just-In-Time (JIT) batching to lower memory overhead.
 
 #### Phase 3: Downstream (Performance Benchmarking)
-* **Script:** `run_benchmark.py`
+* **Script:** `run_benchmark_adls.py`
 * **Function:** **A/B tests** the **"Naive"** random-access method against the **"Optimized"** streaming method.
 * **Methodology:** Includes the high-repetition stress test (500 loops) to capture sustained GPU utilization metrics.
 
 #### Phase 4: Integration (Model Training)
-* **Script:** `training.py`
+* **Script:** `training_adls.py`
 * **Function:** Validates data compatibility with a standard PyTorch Training Loop.
 * **Model:** 3D-CNN (Conv3d) with custom dimension permutation `(Batch, Channel, Time, H, W)` to match channel-first requirements.
 
@@ -99,7 +99,6 @@ To prove the pipeline is mathematically correct and compatible with Deep Learnin
 ---
 
 ### 🔮 Future Improvements
-* **Cloud Migration:** Switch `BASE_DIR` to Azure Data Lake Storage (ADLS).
 * **Augmentation:** Inject `torchvision` transforms into the `data_engine` pipeline.
 * **Scaling:** Deploy to a distributed multi-GPU cluster using `GenericDataLoader`.
 
