@@ -3,7 +3,7 @@
 ### 🚀 Project Overview
 This project implements a production-grade **ETL (Extract, Transform, Load) pipeline** designed to eliminate GPU starvation during Deep Learning training.
 
-Training on massive unstructured datasets (Images, Audio, Video, LIDAR) often suffers from the "Small File Problem," where I/O latency bottlenecks the GPU. This project solves that by engineering a **sequential streaming pipeline** using `WebDataset`. It transforms thousands of random-access files into sequential shards, enabling linear-speed streaming directly from cloud object storage to the GPU VRAM.
+Training on massive unstructured datasets (Images, Audio, Video, LIDAR) often suffers from the "Small File Problem," where I/O latency bottlenecks the GPU. This project solves that by engineering a **sequential streaming pipeline** using `WebDataset`. It transforms thousands of random-access files into sequential shards, enabling linear-speed streaming directly from cloud object storage ADLS Gen2 to the GPU VRAM.
 
 ---
 
